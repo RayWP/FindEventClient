@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		4D4032E926861C540079E56F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4032E826861C540079E56F /* AppDelegate.swift */; };
 		4D4032EB26861C540079E56F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4032EA26861C540079E56F /* SceneDelegate.swift */; };
-		4D4032ED26861C540079E56F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4032EC26861C540079E56F /* ViewController.swift */; };
 		4D4032F026861C540079E56F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4032EE26861C540079E56F /* Main.storyboard */; };
 		4D4032F226861C550079E56F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D4032F126861C550079E56F /* Assets.xcassets */; };
 		4D4032F526861C550079E56F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4032F326861C550079E56F /* LaunchScreen.storyboard */; };
+		4D403301268638D00079E56F /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D403300268638D00079E56F /* ListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4D4032E526861C540079E56F /* FindEventClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindEventClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4032E826861C540079E56F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D4032EA26861C540079E56F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4D4032EC26861C540079E56F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D4032EF26861C540079E56F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D4032F126861C550079E56F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D4032F426861C550079E56F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D4032F626861C550079E56F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D403300268638D00079E56F /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,31 @@
 		4D4032E726861C540079E56F /* FindEventClient */ = {
 			isa = PBXGroup;
 			children = (
+				4D4032FF2686334E0079E56F /* Model */,
+				4D4032FC268632890079E56F /* Controller */,
 				4D4032E826861C540079E56F /* AppDelegate.swift */,
 				4D4032EA26861C540079E56F /* SceneDelegate.swift */,
-				4D4032EC26861C540079E56F /* ViewController.swift */,
 				4D4032EE26861C540079E56F /* Main.storyboard */,
 				4D4032F126861C550079E56F /* Assets.xcassets */,
 				4D4032F326861C550079E56F /* LaunchScreen.storyboard */,
 				4D4032F626861C550079E56F /* Info.plist */,
 			);
 			path = FindEventClient;
+			sourceTree = "<group>";
+		};
+		4D4032FC268632890079E56F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D403300268638D00079E56F /* ListTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D4032FF2686334E0079E56F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D4032ED26861C540079E56F /* ViewController.swift in Sources */,
+				4D403301268638D00079E56F /* ListTableViewController.swift in Sources */,
 				4D4032E926861C540079E56F /* AppDelegate.swift in Sources */,
 				4D4032EB26861C540079E56F /* SceneDelegate.swift in Sources */,
 			);
