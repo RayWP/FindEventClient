@@ -22,6 +22,6 @@ struct Event {
         
         let event3 = Event(name: "Alibaba CLoud Launching", date: formatter.date(from: "2021/07/05")!, link: "alibabacloud.com", description: "Alibaba Cloud launching its 3rd Data Center in Indonesia")
         
-        return [event1, event2, event3]
+        return [event1, event2, event3, event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2]
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 class ListTableViewController: UITableViewController {
 
     var event_list = [Event]()
+    var curr_event = Event(name: "", date: Date(), link: "", description: "")
     override func viewDidLoad() {
         super.viewDidLoad()
         event_list = Event.loadSample()
@@ -39,8 +40,27 @@ class ListTableViewController: UITableViewController {
 
         return cell
     }
-    
 
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "detail_segue" else {
+            return
+        }
+        
+        guard let index_path = tableView.indexPathForSelectedRow else {
+            return
+        }
+        
+        curr_event = event_list[index_path.row]
+        print("selected item: " + curr_event.name)
+        
+        let destination = segue.destination as! EventDetailViewController
+        destination.event = curr_event
+        
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
