@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Event {
+struct Event: Encodable, Decodable, Equatable {
     var name: String
     var date: Date
     var link: String
@@ -22,6 +22,23 @@ struct Event {
         
         let event3 = Event(name: "Alibaba CLoud Launching", date: formatter.date(from: "2021/07/05")!, link: "alibabacloud.com", description: "Alibaba Cloud launching its 3rd Data Center in Indonesia")
         
-        return [event1, event2, event3, event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2,event2]
+        return [event1, event2, event3]
     }
+    
+    static func ==(first_item: Event, second_item: Event) -> Bool {
+        if first_item.name != second_item.name {
+            return false
+        }
+        if first_item.link != second_item.link {
+            return false
+        }
+        if first_item.description != second_item.description {
+            return false
+        }
+        if first_item.date != second_item.date {
+            return false
+        }
+        return true
+    }
+    
 }

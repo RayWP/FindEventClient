@@ -21,7 +21,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Eae-rw-cwQ" kind="relationship" relationship="viewControllers" id="8VV-jb-UgO"/>
-                        <segue destination="2T1-zW-w6P" kind="relationship" relationship="viewControllers" id="NC3-Qt-dzz"/>
+                        <segue destination="eiu-t4-s5U" kind="relationship" relationship="viewControllers" id="FFp-vA-jtA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yc7-cw-A1d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -45,14 +45,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jqm-wm-A7c">
-                                            <rect key="frame" x="20" y="5" width="41" height="26.5"/>
+                                            <rect key="frame" x="20" y="9" width="36.5" height="23"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EZj-PJ-eaQ">
-                                            <rect key="frame" x="20" y="31.5" width="67.5" height="24"/>
+                                            <rect key="frame" x="20" y="32" width="58.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <nil key="textColor"/>
@@ -67,7 +67,7 @@
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <connections>
                                     <outlet property="event_date" destination="EZj-PJ-eaQ" id="Lpy-8R-cd7"/>
-                                    <outlet property="event_name" destination="jqm-wm-A7c" id="5Rb-X7-y2V"/>
+                                    <outlet property="event_name" destination="jqm-wm-A7c" id="HW5-Wi-Br0"/>
                                     <segue destination="Yzh-lC-P5H" kind="show" identifier="detail_segue" id="Cde-yb-3g6"/>
                                 </connections>
                             </tableViewCell>
@@ -84,6 +84,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkf-gf-WTT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="802.89855072463774" y="-117.1875"/>
+        </scene>
+        <!--Bookmark Event-->
+        <scene sceneID="Cck-5g-b8n">
+            <objects>
+                <tableViewController title="Bookmark Event" id="eiu-t4-s5U" customClass="BookmarkTableViewController" customModule="FindEventClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JRn-tT-CFA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bookmark_cell" textLabel="mb7-w9-Yxj" detailTextLabel="3bU-i5-JTB" style="IBUITableViewCellStyleSubtitle" id="m0n-Ft-qKI" customClass="BookmarkTableViewCell" customModule="FindEventClient" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="49.5" width="414" height="67.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m0n-Ft-qKI" id="ICS-jb-FrX">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="67.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mb7-w9-Yxj">
+                                            <rect key="frame" x="20" y="8.5" width="36.5" height="23"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3bU-i5-JTB">
+                                            <rect key="frame" x="20" y="35" width="58.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookmark_date" destination="3bU-i5-JTB" id="lzN-pb-6Zn"/>
+                                    <outlet property="bookmark_name" destination="mb7-w9-Yxj" id="RSs-gs-34C"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eiu-t4-s5U" id="mSQ-zQ-nWa"/>
+                            <outlet property="delegate" destination="eiu-t4-s5U" id="Mn0-zD-O4J"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Bookmark" image="bookmark.fill" catalog="system" id="UMd-OQ-E8A"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JWe-Zd-5yW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23" y="622"/>
         </scene>
         <!--Event Detail-->
         <scene sceneID="yih-oa-5yU">
@@ -138,6 +187,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEp-a6-xKJ">
                                 <rect key="frame" x="151.5" y="506.5" width="111" height="30"/>
                                 <state key="normal" title="Share this event"/>
+                                <connections>
+                                    <action selector="shareEvent:" destination="Yzh-lC-P5H" eventType="touchUpInside" id="Sar-01-IqS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9la-x5-i7K"/>
@@ -170,24 +222,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zg-Rb-4ts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1731.8840579710147" y="-117.1875"/>
-        </scene>
-        <!--f-->
-        <scene sceneID="6yV-ou-jFV">
-            <objects>
-                <viewController title="f" id="2T1-zW-w6P" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CTR-Qi-hq1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="fbr-cQ-NWa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Marked" image="bookmark.fill" catalog="system" id="Z5b-Bn-GfT"/>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xrC-NE-dsp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-107" y="716"/>
         </scene>
         <!--Events-->
         <scene sceneID="f42-jt-cgt">

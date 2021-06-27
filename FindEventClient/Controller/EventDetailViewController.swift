@@ -11,7 +11,7 @@ import SafariServices
 class EventDetailViewController: UIViewController {
 
     var event: Event!
-    var isbookmarked = true
+    var isbookmarked = false
     @IBOutlet weak var event_name: UILabel!
     @IBOutlet weak var event_date: UILabel!
     @IBOutlet weak var event_link: UILabel!
@@ -34,9 +34,12 @@ class EventDetailViewController: UIViewController {
         if isbookmarked {
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "bookmark")
             isbookmarked = false
+            DataManager.removeFromBookmark(event)
+            
         } else {
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "bookmark.fill")
             isbookmarked = true
+            DataManager.addToBookmark(event)
         }
     }
     
@@ -50,6 +53,17 @@ class EventDetailViewController: UIViewController {
             let safari =  SFSafariViewController(url: url)
             present(safari, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func shareEvent(_ sender: Any) {
+        
+        let shareactivity = UIActivityViewController(activityItems: [event.name, event.link], applicationActivities: nil)
+        
+        shareactivity.popoverPresentationController?.sourceView = sender as? UIView
+        
+        present(shareactivity, animated: true, completion: nil)
+        
+        
     }
     
     /*
