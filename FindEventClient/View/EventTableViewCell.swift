@@ -29,10 +29,8 @@ class EventTableViewCell: UITableViewCell {
     }
     
     func update(with event: Event){
-        let df = DateFormatter()
-        df.dateFormat = "YY/mm/dd"
         event_name.text = event.name
-        event_date.text = df.string(from: event.date)
+        event_date.text = event.getDateString()
 //        event_link.text = event.link
         print("event link: ", event.link )
 //        event_desc.text = event.description

@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D2385FE2689E04C00C016F4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 4D2385FD2689E04C00C016F4 /* SwiftyJSON */; };
+		4D2386012689E3B900C016F4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4D2386002689E3B900C016F4 /* Alamofire */; };
 		4D2530E42686BE2500C1A8C2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2530E32686BE2500C1A8C2 /* Event.swift */; };
 		4D2530E82686C75D00C1A8C2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2530E72686C75D00C1A8C2 /* EventTableViewCell.swift */; };
 		4D2530EA2686DAC900C1A8C2 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2530E92686DAC900C1A8C2 /* EventDetailViewController.swift */; };
@@ -19,6 +21,7 @@
 		4D4C593E2688B43B00A62814 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C593D2688B43B00A62814 /* DataManager.swift */; };
 		4D4C59402688BF3600A62814 /* BookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C593F2688BF3600A62814 /* BookmarkTableViewController.swift */; };
 		4D4C59422688C55400A62814 /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C59412688C55400A62814 /* BookmarkTableViewCell.swift */; };
+		4D590438268A1519002C86FA /* CreateEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D590437268A1519002C86FA /* CreateEventTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,7 @@
 		4D4C593D2688B43B00A62814 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4D4C593F2688BF3600A62814 /* BookmarkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewController.swift; sourceTree = "<group>"; };
 		4D4C59412688C55400A62814 /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
+		4D590437268A1519002C86FA /* CreateEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2385FE2689E04C00C016F4 /* SwiftyJSON in Frameworks */,
+				4D2386012689E3B900C016F4 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +103,7 @@
 				4D403300268638D00079E56F /* ListTableViewController.swift */,
 				4D2530E92686DAC900C1A8C2 /* EventDetailViewController.swift */,
 				4D4C593F2688BF3600A62814 /* BookmarkTableViewController.swift */,
+				4D590437268A1519002C86FA /* CreateEventTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -133,6 +140,10 @@
 			dependencies = (
 			);
 			name = FindEventClient;
+			packageProductDependencies = (
+				4D2385FD2689E04C00C016F4 /* SwiftyJSON */,
+				4D2386002689E3B900C016F4 /* Alamofire */,
+			);
 			productName = FindEventClient;
 			productReference = 4D4032E526861C540079E56F /* FindEventClient.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +171,10 @@
 				Base,
 			);
 			mainGroup = 4D4032DC26861C540079E56F;
+			packageReferences = (
+				4D2385FC2689E04C00C016F4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				4D2385FF2689E3B900C016F4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 4D4032E626861C540079E56F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -193,6 +208,7 @@
 				4D403301268638D00079E56F /* ListTableViewController.swift in Sources */,
 				4D4C59402688BF3600A62814 /* BookmarkTableViewController.swift in Sources */,
 				4D4C593E2688B43B00A62814 /* DataManager.swift in Sources */,
+				4D590438268A1519002C86FA /* CreateEventTableViewController.swift in Sources */,
 				4D4032E926861C540079E56F /* AppDelegate.swift in Sources */,
 				4D2530E82686C75D00C1A8C2 /* EventTableViewCell.swift in Sources */,
 				4D4032EB26861C540079E56F /* SceneDelegate.swift in Sources */,
@@ -397,6 +413,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D2385FC2689E04C00C016F4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		4D2385FF2689E3B900C016F4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D2385FD2689E04C00C016F4 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D2385FC2689E04C00C016F4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		4D2386002689E3B900C016F4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D2385FF2689E3B900C016F4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4D4032DD26861C540079E56F /* Project object */;
 }

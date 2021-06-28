@@ -13,6 +13,12 @@ struct Event: Encodable, Decodable, Equatable {
     var link: String
     var description: String
     
+    func getDateString() -> String {
+        let df = DateFormatter()
+        df.dateFormat = "YY/mm/dd"
+        return df.string(from: self.date)
+    }
+    
     static func loadSample() -> [Event] {
         let formatter = DateFormatter()
         formatter.dateFormat = "YY/mm/dd"

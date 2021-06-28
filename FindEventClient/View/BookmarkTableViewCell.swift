@@ -25,10 +25,8 @@ class BookmarkTableViewCell: UITableViewCell {
     }
     
     func update(with event: Event){
-        let df = DateFormatter()
-        df.dateFormat = "YY/mm/dd"
         bookmark_name.text = event.name
-        bookmark_date.text = df.string(from: event.date)
+        bookmark_date.text = event.getDateString()
 //        event_link.text = event.link
         print("event link: ", event.link )
 //        event_desc.text = event.description

@@ -28,10 +28,9 @@ class EventDetailViewController: UIViewController {
             isbookmarked = false
         }
         
-        let df = DateFormatter()
-        df.dateFormat = "YY/mm/dd"
+        
         event_name.text = event.name
-        event_date.text = df.string(from: event.date)
+        event_date.text = event.getDateString()
         event_link.text = event.link
         event_desc.text = event.description
         // Do any additional setup after loading the view.
