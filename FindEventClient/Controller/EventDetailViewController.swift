@@ -20,7 +20,7 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
         
         
-        if DataManager.isInBookmark(event) {
+        if BookmarkManager.isInBookmark(event) {
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "bookmark.fill")
             isbookmarked = true
         } else {
@@ -41,12 +41,12 @@ class EventDetailViewController: UIViewController {
         if isbookmarked {
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "bookmark")
             isbookmarked = false
-            DataManager.removeFromBookmark(event)
+            BookmarkManager.removeFromBookmark(event)
             
         } else {
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "bookmark.fill")
             isbookmarked = true
-            DataManager.addToBookmark(event)
+            BookmarkManager.addToBookmark(event)
         }
     }
     

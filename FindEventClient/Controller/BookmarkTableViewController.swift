@@ -22,7 +22,7 @@ class BookmarkTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        event_list = DataManager.readBookmark()
+        event_list = BookmarkManager.readBookmark()
         tableView.reloadData()
     }
 
