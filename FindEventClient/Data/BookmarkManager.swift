@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DataManager  {
+class BookmarkManager  {
     var event_list: Event!
     
     static func addToBookmark(_ event: Event){
@@ -46,7 +46,8 @@ class DataManager  {
         saveBookmark(bookmarked_event)
     }
     
-    static func saveBookmark(_ list: [Event]) {
+//    is private so only insider can use it
+    static private func saveBookmark(_ list: [Event]) {
         let document_dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archive_url = document_dir.appendingPathComponent("event_list").appendingPathExtension("plist")
         let propertyListEncoder = PropertyListEncoder()
