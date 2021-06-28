@@ -18,15 +18,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var event_desc: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        if DataManager.isInBookmark(event) {
-            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "bookmark.fill")
-            isbookmarked = true
-        } else {
-            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "bookmark")
-            isbookmarked = false
-        }
+        navigationItem.rightBarButtonItem?.image = UIImage(systemName: "bookmark")
         
         let df = DateFormatter()
         df.dateFormat = "YY/mm/dd"

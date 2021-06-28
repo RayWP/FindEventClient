@@ -16,21 +16,6 @@ class DataManager  {
         saveBookmark(bookmarked_event)
     }
     
-    static func isInBookmark(_ event: Event) -> Bool {
-        var bookmarked_event = readBookmark()
-        var index = 0
-        for b_event in bookmarked_event {
-            if b_event == event {
-                print("size: ", bookmarked_event.count)
-                print("index detected: ", index)
-                bookmarked_event.remove(at: index)
-                return true
-            }
-            index = index + 1
-        }
-        return false
-    }
-    
     static func removeFromBookmark(_ event: Event) {
         var bookmarked_event = readBookmark()
         var index = 0
