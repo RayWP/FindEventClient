@@ -7,6 +7,8 @@
 
 import UIKit
 
+//https://betterprogramming.pub/how-to-add-a-pull-to-refresh-feature-in-your-uitableviewcontroller-using-swift-5622fbf35664
+
 class ListTableViewController: UITableViewController {
 
     var event_list = [Event]()

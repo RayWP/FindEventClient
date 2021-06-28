@@ -88,7 +88,7 @@
         <!--Bookmark Event-->
         <scene sceneID="Cck-5g-b8n">
             <objects>
-                <tableViewController title="Bookmark Event" id="eiu-t4-s5U" customClass="BookmarkTableViewController" customModule="FindEventClient" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Bookmark Event" modalTransitionStyle="crossDissolve" id="eiu-t4-s5U" customClass="BookmarkTableViewController" customModule="FindEventClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JRn-tT-CFA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,6 +129,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Bookmark" image="bookmark.fill" catalog="system" id="UMd-OQ-E8A"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="HZW-N4-L2G">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JWe-Zd-5yW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
