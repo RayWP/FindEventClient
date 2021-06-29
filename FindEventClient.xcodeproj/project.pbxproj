@@ -23,7 +23,6 @@
 		4D4C59422688C55400A62814 /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C59412688C55400A62814 /* BookmarkTableViewCell.swift */; };
 		4D590438268A1519002C86FA /* CreateEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D590437268A1519002C86FA /* CreateEventTableViewController.swift */; };
 		4D59043A268A230E002C86FA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D590439268A230E002C86FA /* DataManager.swift */; };
-		4DB2EC2F268AD9420083B59A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB2EC2E268AD9420083B59A /* data.json */; };
 		4DB2EC31268B7C010083B59A /* BookmarkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2EC30268B7C010083B59A /* BookmarkDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +43,6 @@
 		4D4C59412688C55400A62814 /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
 		4D590437268A1519002C86FA /* CreateEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventTableViewController.swift; sourceTree = "<group>"; };
 		4D590439268A230E002C86FA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		4DB2EC2E268AD9420083B59A /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		4DB2EC30268B7C010083B59A /* BookmarkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +124,6 @@
 		4D4C593C2688B35F00A62814 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4DB2EC2E268AD9420083B59A /* data.json */,
 				4D4C593D2688B43B00A62814 /* BookmarkManager.swift */,
 				4D590439268A230E002C86FA /* DataManager.swift */,
 			);
@@ -201,7 +198,6 @@
 				4D4032F526861C550079E56F /* LaunchScreen.storyboard in Resources */,
 				4D4032F226861C550079E56F /* Assets.xcassets in Resources */,
 				4D4032F026861C540079E56F /* Main.storyboard in Resources */,
-				4DB2EC2F268AD9420083B59A /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
