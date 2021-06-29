@@ -9,13 +9,18 @@ import UIKit
 
 //https://betterprogramming.pub/how-to-add-a-pull-to-refresh-feature-in-your-uitableviewcontroller-using-swift-5622fbf35664
 
-class ListTableViewController: UITableViewController {
+class ListTableViewController: UITableViewController, UISearchBarDelegate {
 
     var event_list = [Event]()
+    var full_event = [Event]()
     var curr_event = Event(name: "", date: Date(), link: "", description: "")
+    
+    @IBOutlet weak var search_bar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
+        search_bar.delegate = self
 //        event_list = Event.loadSample()
+        full_event = DataManager.readEvent()
         event_list = DataManager.readEvent()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,7 +31,41 @@ class ListTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        event_list = DataManager.readEvent()
+        full_event = DataManager.readEvent()
+        event_list = full_event
+        tableView.reloadData()
+    }
+    
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        let query = searchBar.text ?? ""
+//        var event_query = [Event]()
+//        if query != "" {
+//            for event in event_list {
+//                if event.name.contains(query) {
+//                    event_query.append(event)
+//                }
+//            }
+//            event_list = event_query
+//        } else {
+//            event_list = DataManager.readEvent()
+//        }
+//        tableView.reloadData()
+//    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        var event_query = [Event]()
+        if searchText != "" {
+            for event in full_event {
+                if event.name.lowercased().contains(searchText.lowercased()) {
+                    event_query.append(event)
+                }
+            }
+            event_list = event_query
+        } else {
+            event_list = full_event
+        }
+        print("query:'",searchText,"'")
         tableView.reloadData()
     }
 

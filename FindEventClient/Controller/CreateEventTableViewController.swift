@@ -87,7 +87,7 @@ class CreateEventTableViewController: UITableViewController {
         event_name.text = ""
         event_link.text = ""
         event_desc.text = ""
-
+        updateSaveBtnState()
     }
     
     
