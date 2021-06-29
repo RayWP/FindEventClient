@@ -28,7 +28,7 @@ class BookmarkTableViewCell: UITableViewCell {
         bookmark_name.text = event.name
         bookmark_date.text = event.getDateToString()
 //        event_link.text = event.link
-        print("event link: ", event.link )
+//        print("event link: ", event.link )
 //        event_desc.text = event.description
     
     }

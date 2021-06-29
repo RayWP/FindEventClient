@@ -32,7 +32,7 @@ class EventTableViewCell: UITableViewCell {
         event_name.text = event.name
         event_date.text = event.getDateToString()
 //        event_link.text = event.link
-        print("event link: ", event.link )
+//        print("event link: ", event.link )
 //        event_desc.text = event.description
     
     }

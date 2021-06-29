@@ -25,9 +25,19 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        getEventFromDataManager()
+    }
+    
+    func getEventFromDataManager(){
+        full_event = [Event]()
+        event_list = [Event]()
+        getDataFromApi()
         full_event = DataManager.readEvent()
         event_list = full_event
-        getDataFromApi()
+        tableView.reloadData()
+        
+        print("after api")
+        
     }
     
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -79,6 +89,7 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
                     self.full_event.append(get_event)
                     self.tableView.reloadData()
                 }
+                
             }
         }
     }

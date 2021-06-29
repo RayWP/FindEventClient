@@ -10,8 +10,11 @@ import UIKit
 class BookmarkTableViewController: UITableViewController {
 
     var event_list =  [Event]()
+    @IBOutlet weak var sortBtn: UIBarButtonItem!
+    var curr_event = Event(name: "", date: Date(), link: "", description: "")
     override func viewDidLoad() {
         super.viewDidLoad()
+//        navigationItem.leftBarButtonItem = editButtonItem
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,6 +29,33 @@ class BookmarkTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "bookmark_detail" else {
+            return
+        }
+        
+        guard let index_path = tableView.indexPathForSelectedRow else {
+            return
+        }
+        
+        curr_event = event_list[index_path.row]
+        print("selected item: " + curr_event.name)
+        
+        let destination = segue.destination as! BookmarkDetailViewController
+        destination.event = curr_event
+        
+    }
+    
+    
+    @IBAction func sortBtnTapped(_ sender: Any) {
+        tableView.isEditing = !tableView.isEditing
+        if tableView.isEditing {
+            sortBtn.title = "Done"
+        } else {
+            sortBtn.title = "Sort"
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +64,11 @@ class BookmarkTableViewController: UITableViewController {
         return event_list.count
     }
 
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let moved_event = event_list.remove(at: sourceIndexPath.row)
+        event_list.insert(moved_event, at: destinationIndexPath.row)
+        BookmarkManager.updateBookmarkList(event_list)
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bookmark_cell", for: indexPath) as! BookmarkTableViewCell
@@ -43,6 +78,16 @@ class BookmarkTableViewController: UITableViewController {
         // Configure the cell...
 
         return cell
+    }
+    
+    
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(true, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
     }
 
     /*

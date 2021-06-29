@@ -49,6 +49,10 @@ class BookmarkManager  {
         saveBookmark(bookmarked_event)
     }
     
+    static func updateBookmarkList(_ list:[Event]) {
+        saveBookmark(list)
+    }
+    
 //    is private so only insider can use it
     static private func saveBookmark(_ list: [Event]) {
         let document_dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!

@@ -1,14 +1,13 @@
 //
-//  EventDetailViewController.swift
+//  BookmarkDetailTableViewController.swift
 //  FindEventClient
 //
-//  Created by Raymond on 26/06/21.
+//  Created by Raymond on 29/06/21.
 //
 
 import UIKit
 import SafariServices
-
-class EventDetailViewController: UIViewController {
+class BookmarkDetailViewController: UIViewController {
 
     var event: Event!
     var isbookmarked = false
@@ -72,5 +71,4 @@ class EventDetailViewController: UIViewController {
         
         
     }
-
 }
