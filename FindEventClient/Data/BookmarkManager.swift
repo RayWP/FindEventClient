@@ -10,6 +10,9 @@ import Foundation
 class BookmarkManager  {
     var event_list: Event!
     
+    static var file_name = "bookmark_list"
+    static let ext = "plist"
+    
     static func addToBookmark(_ event: Event){
         var bookmarked_event = readBookmark()
         bookmarked_event.append(event)
@@ -49,7 +52,7 @@ class BookmarkManager  {
 //    is private so only insider can use it
     static private func saveBookmark(_ list: [Event]) {
         let document_dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archive_url = document_dir.appendingPathComponent("event_list").appendingPathExtension("plist")
+        let archive_url = document_dir.appendingPathComponent(file_name).appendingPathExtension(ext)
         let propertyListEncoder = PropertyListEncoder()
         let encoded_list = try? propertyListEncoder.encode(list)
         
@@ -59,7 +62,7 @@ class BookmarkManager  {
     
     static func readBookmark() -> [Event] {
         let document_dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archive_url = document_dir.appendingPathComponent("event_list").appendingPathExtension("plist")
+        let archive_url = document_dir.appendingPathComponent(file_name).appendingPathExtension(ext)
         let propertyListDecoder = PropertyListDecoder()
         if let retrieved_list = try? Data(contentsOf: archive_url), let decodedEvents = try? propertyListDecoder.decode(Array<Event>.self, from: retrieved_list){
             
@@ -67,7 +70,5 @@ class BookmarkManager  {
         } else {
             return []
         }
-        
-        
     }
 }
