@@ -51,6 +51,9 @@
                                                     <rect key="frame" x="8" y="0.0" width="398" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="onTextNameChanged:" destination="NE4-QZ-wtp" eventType="editingChanged" id="W6i-Bx-PZs"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -76,6 +79,9 @@
                                                     <rect key="frame" x="8" y="0.0" width="398" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="onLinkTextChanged:" destination="NE4-QZ-wtp" eventType="editingChanged" id="bVa-iW-gDd"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -124,6 +130,9 @@
                                                     <rect key="frame" x="8" y="0.0" width="398" height="150"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="onDescTextChanged:" destination="NE4-QZ-wtp" eventType="editingChanged" id="Sy8-vf-7zp"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -144,25 +153,30 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Create New Event" id="uhh-TN-UHz">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="gZ3-Hy-Ugl">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="O6G-31-g0S">
-                                <rect key="frame" x="20" y="7" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="unA-ZW-gkN">
+                            <connections>
+                                <action selector="onClearBtnClick:" destination="NE4-QZ-wtp" id="eX8-qN-hJw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="GWW-Jw-RPC">
+                            <connections>
+                                <action selector="onSaveBtnClick:" destination="NE4-QZ-wtp" id="G1a-re-9IT"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="clearBtn" destination="unA-ZW-gkN" id="KCT-uD-3Iz"/>
                         <outlet property="event_date" destination="nYq-Jv-62L" id="Hem-k8-48q"/>
                         <outlet property="event_desc" destination="HLi-HX-K8V" id="pfw-ha-tNw"/>
                         <outlet property="event_link" destination="Rmm-xE-d4r" id="Lte-QI-A88"/>
                         <outlet property="event_name" destination="OKq-VU-SP2" id="nIy-qm-hbD"/>
+                        <outlet property="save_btn" destination="GWW-Jw-RPC" id="k32-um-5tr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iU3-AS-NUn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="608.69565217391312" y="-840.40178571428567"/>
+            <point key="canvasLocation" x="803" y="-840"/>
         </scene>
         <!--List View-->
         <scene sceneID="eTx-wz-Svc">
@@ -244,14 +258,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mb7-w9-Yxj">
-                                            <rect key="frame" x="20" y="8.5" width="36.5" height="23"/>
+                                            <rect key="frame" x="20" y="9" width="41" height="26.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3bU-i5-JTB">
-                                            <rect key="frame" x="20" y="35" width="58.5" height="20.5"/>
+                                            <rect key="frame" x="20" y="35.5" width="67.5" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <nil key="textColor"/>
@@ -367,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zg-Rb-4ts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1917" y="-117"/>
+            <point key="canvasLocation" x="1907" y="-117"/>
         </scene>
         <!--Events-->
         <scene sceneID="f42-jt-cgt">
