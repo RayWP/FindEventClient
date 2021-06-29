@@ -15,7 +15,7 @@ struct Event: Encodable, Decodable, Equatable {
     
     func getDateString() -> String {
         let df = DateFormatter()
-        df.dateFormat = "YY/mm/dd"
+        df.dateFormat = "EEEE, MMM d, yyyy"
         return df.string(from: self.date)
     }
     
