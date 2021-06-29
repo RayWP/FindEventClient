@@ -40,6 +40,11 @@ class CreateEventTableViewController: UITableViewController {
         
         DataManager.addEvent(new_event)
         print("success add event: ", new_event)
+        
+        let alert_controller = UIAlertController(title: "Event created local", message: "success created event in local storage", preferredStyle: .alert)
+        let ok_alert = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert_controller.addAction(ok_alert)
+        present(alert_controller, animated: true, completion: nil)
         onClearBtnClick(sender)
     }
     
