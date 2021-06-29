@@ -15,7 +15,8 @@ class ListTableViewController: UITableViewController {
     var curr_event = Event(name: "", date: Date(), link: "", description: "")
     override func viewDidLoad() {
         super.viewDidLoad()
-        event_list = Event.loadSample()
+//        event_list = Event.loadSample()
+        event_list = DataManager.readEvent()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,6 +24,11 @@ class ListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        event_list = DataManager.readEvent()
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
