@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 //https://betterprogramming.pub/how-to-add-a-pull-to-refresh-feature-in-your-uitableviewcontroller-using-swift-5622fbf35664
 
@@ -19,21 +21,13 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         search_bar.delegate = self
-//        event_list = Event.loadSample()
-        full_event = DataManager.readEvent()
-        event_list = DataManager.readEvent()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         full_event = DataManager.readEvent()
         event_list = full_event
-        tableView.reloadData()
+        getDataFromApi()
     }
     
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -63,10 +57,30 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
             }
             event_list = event_query
         } else {
-            event_list = full_event
+            viewWillAppear(true)
         }
         print("query:'",searchText,"'")
         tableView.reloadData()
+    }
+    
+    func getDataFromApi() {
+        
+        AF.request("https://my-json-server.typicode.com/RayWP/EventAPI/db").responseJSON{ response -> Void in
+            if let data = response.data{
+                let json = JSON(data)
+                let events = json["events"]
+                for event in events {
+                    let name = event.1["name"].string
+                    let link = event.1["link"].string
+                    let date = event.1["date"].string
+                    let desc = event.1["desc"].string
+                    let get_event = Event(name: name!, date: Event.getStringToDate(new_date: date!), link: link!, description: desc!)
+                    self.event_list.append(get_event)
+                    self.full_event.append(get_event)
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -76,7 +90,8 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
 //        return event_list.count
         return event_list.count
     }
-
+    
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "event_cell", for: indexPath) as! EventTableViewCell

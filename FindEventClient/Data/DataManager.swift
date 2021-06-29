@@ -43,35 +43,6 @@ class DataManager {
         print("saved list: ", list)
     }
     
-    static func getData() {
-        AF.request("http://192.168.1.14:8090/categories").responseJSON{ response in
-            if let data = response.data{
-                let json = JSON(data)
-                print("result", json["categories"])
-            }
-            
-        }
-    }
     
-    static func postData() {
-        let parameters: [String: [String]] = [
-            "foo": ["bar"],
-            "baz": ["a", "b"],
-            "qux": ["x", "y", "z"]
-        ]
-        AF.request("http://192.168.1.14:8090/categories", method: .post, parameters: parameters)
-        print("success post data")
-    }
-    
-    static func readData(){
-        do {
-            let name = "data"
-                if let bundlePath = Bundle.main.path(forResource: name, ofType: "json"), let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
-                    print(JSON(jsonData))
-                }
-            } catch {
-                print(error)
-            }
-    }
     
 }

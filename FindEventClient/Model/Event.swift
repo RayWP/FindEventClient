@@ -13,10 +13,16 @@ struct Event: Encodable, Decodable, Equatable {
     var link: String
     var description: String
     
-    func getDateString() -> String {
+    func getDateToString() -> String {
         let df = DateFormatter()
         df.dateFormat = "EEEE, MMM d, yyyy"
         return df.string(from: self.date)
+    }
+    
+    static func getStringToDate(new_date: String) -> Date{
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        return df.date(from: new_date)!
     }
     
     static func loadSample() -> [Event] {

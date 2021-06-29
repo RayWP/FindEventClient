@@ -26,7 +26,7 @@ class BookmarkTableViewCell: UITableViewCell {
     
     func update(with event: Event){
         bookmark_name.text = event.name
-        bookmark_date.text = event.getDateString()
+        bookmark_date.text = event.getDateToString()
 //        event_link.text = event.link
         print("event link: ", event.link )
 //        event_desc.text = event.description

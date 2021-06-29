@@ -30,7 +30,7 @@ class EventDetailViewController: UIViewController {
         
         
         event_name.text = event.name
-        event_date.text = event.getDateString()
+        event_date.text = event.getDateToString()
         event_link.text = event.link
         event_desc.text = event.description
         // Do any additional setup after loading the view.

@@ -30,7 +30,7 @@ class EventTableViewCell: UITableViewCell {
     
     func update(with event: Event){
         event_name.text = event.name
-        event_date.text = event.getDateString()
+        event_date.text = event.getDateToString()
 //        event_link.text = event.link
         print("event link: ", event.link )
 //        event_desc.text = event.description
